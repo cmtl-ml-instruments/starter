@@ -81,3 +81,5 @@ What you found in week one, so the rest of us can read them too:
   https://www.nime.org/proceedings/2012/nime2012_149.pdf
 - *Machine Learning for a Music Glove Instrument* —
   https://arxiv.org/abs/2001.09551
+- *Networked Remote Music Collaboration using Machine Learning* -
+  https://ieeexplore.ieee.org/document/9027481
