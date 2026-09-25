@@ -39,6 +39,46 @@ gather the bytes between line breaks and turn them back into a number.
 - Fiebrink & Sonami, the paper you read —
   https://www.nime.org/proceedings/2020/nime2020_paper45.pdf
 
+### iris
+
+- **The library** — https://github.com/kylebsmith/iris
+  A small C library that learns the mapping from sensor readings to sound settings
+  from a handful of demonstrations, on the board itself, with nothing to install.
+  Three calls: `iris_record` (this gesture goes with this sound), `iris_train`
+  (learn it), `iris_predict` (play). The smallest complete sketch is
+  `examples/iris_smallest/`. It is the embedded descendant of Wekinator's
+  record, train, play loop.
+- **The starter kit** — https://github.com/kylebsmith/iris-starter
+  Sketches that run on your board with a motion sensor. Setup is in
+  `GET-STARTED.md`, parts and wiring in `PARTS.md`, and fixes for the usual
+  problems in `TROUBLESHOOTING.md`. In this order:
+  1. `iris_scope`, with its Processing plotter — the curve demo from class. Watch
+     it learn, bend it with a bad demonstration, delete that one, watch it recover.
+  2. `iris_tilt` — play it by tilting the board.
+  3. `boilerplate/any_sensor` — plug in your own sensor.
+  4. `iris_instrument` — the board becomes a MIDI controller for a synthesizer.
+
+**Board settings**, under Tools with ESP32S3 Dev Module selected: USB Mode
+*USB-OTG (TinyUSB)* · USB CDC On Boot *Enabled* · Flash Size *16MB* · PSRAM
+*OPI PSRAM* · Partition Scheme *16M Flash (3MB APP/9.9MB FATFS)* · Upload Mode
+*USB-OTG CDC (TinyUSB)*. The last one is the one people miss: without it your
+second upload fails with `No serial data received`. Serial Monitor at 115200.
+
+**Where it fits.** Get your sensors reading first, and get your sound responding
+to something, anything. iris goes in between once both work: it replaces a
+mapping you could never write down by hand — several sensors, several sound
+controls, messy numbers underneath — with one you demonstrate instead. Anything
+you can write as a simple rule, write it by hand.
+
+## From class
+
+- **What the machine is actually doing** (`what-the-machine-is-actually-doing.pdf`)
+  — how a machine learns by trial and error (the pole-balancing machine, and the
+  problem of working out which of its own actions to blame), and why learning from
+  a few demonstrations means fitting a curve through them: guess, measure how
+  wrong, nudge, repeat. Delete a bad demonstration and the curve re-fits. Figures
+  and explanations from a 1988 tutorial by Jeff Smith, used with his permission.
+
 ## Finding your own
 
 The NIME archive is every paper in this field, free —
