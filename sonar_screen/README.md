@@ -31,7 +31,7 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 
 **Flash it:**
 
-1. Open [`sonar_screen/sonar_screen.ino`](sonar_screen/sonar_screen.ino) and click **Copy raw file** (top right of the code).
+1. Open [`sonar_screen/sonar_screen.ino`](sonar_screen.ino) and click **Copy raw file** (top right of the code).
 2. In Arduino: **File → New Sketch**, select everything, paste.
 3. **Tools → Board → esp32 → ESP32S3 Dev Module**, then **Tools → Port** → the one that appeared when you plugged in.
 4. Click **Upload** (the arrow).
